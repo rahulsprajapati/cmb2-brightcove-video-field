@@ -58,5 +58,5 @@ script:
     fi
   - |
     if [[ "$WP_TRAVISCI" == "phpcs" ]] ; then
-      ./vendor/bing/phpcs
+      ./vendor/bin/phpcs
     fi
