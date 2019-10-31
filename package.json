@@ -1,0 +1,21 @@
+{
+	"author": "Rahul Prajapati",
+	"name": "cmb2-brightcove-video-field",
+	"version": "1.0.0",
+	"license": "GPL-3.0",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/rahulsprajapati/cmb2-brightcove-video-field"
+	},
+	"browserslist": [
+		"last 2 versions",
+		"not < 1%",
+		"not dead"
+	],
+	"devDependencies": {
+		"grunt-wp-i18n": "^1.0.3"
+	},
+	"scripts": {
+		"makepot": "grunt makepot"
+	}
+}
