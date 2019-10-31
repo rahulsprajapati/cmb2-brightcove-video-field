@@ -49,7 +49,9 @@ meta_value: [
 ## Screenshots
 
 1. Classic Editor Metabox  
+
 ![Classic Editor Metabox](./screenshots/classic-editor-example.png)`
 
 2. Gutenberg Metabox
+
 ![Gutenberg Metabox](./screenshots/gutenberg-view.png)`
