@@ -1,0 +1,32 @@
+{
+  "name": "rahulsprajapati/cmb2-brightcove-video-field",
+  "description": "CMB2-Brightcove-Video-Field",
+  "authors": [
+    {
+      "name": "Rahul Prajapati",
+      "email": "rahul.prajapati@live.in",
+      "homepage": "https://github.com/rahulsprajapati",
+      "role": "Developer"
+    }
+  ],
+  "type": "wordpress-plugin",
+  "prefer-stable": true,
+  "homepage": "https://github.com/rahulsprajapati/cmb2-brightcove-video-field",
+  "support": {
+    "issues": "https://github.com/rahulsprajapati/cmb2-brightcove-video-field/issues",
+    "source": "https://github.com/rahulsprajapati/cmb2-brightcove-video-field/"
+  },
+  "minimum-stability": "dev",
+  "require-dev": {
+    "squizlabs/php_codesniffer": "~3.3",
+    "automattic/vipwpcs": "~0.4",
+    "phpcompatibility/php-compatibility": "~9.3",
+    "dealerdirect/phpcodesniffer-composer-installer": "^0.5"
+  },
+  "require": {
+    "php": ">7.0"
+  },
+  "suggest": {
+    "composer/installers": "~1.6"
+  }
+}
