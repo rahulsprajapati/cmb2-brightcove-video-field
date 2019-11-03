@@ -132,15 +132,21 @@ function cmb2_render_callback_for_brightcove_video( $field, $escaped_value, $obj
 
 	$field_id = $field->id();
 
+	$bc_video_values = [
+		'video_id'       => $escaped_value['bc_video_id'] ?? '',
+		'player_id'      => $escaped_value['bc_player_id'] ?? '',
+		'account_id'     => $escaped_value['bc_account_id'] ?? '',
+		'video_duration' => $escaped_value['bc_video_duration'] ?? '',
+	];
+
 	$bc_video_args = [
-		'video_id'    => $escaped_value['bc_video_id'] ?? '',
-		'player_id'   => $escaped_value['bc_player_id'] ?? '',
-		'account_id'  => $escaped_value['bc_account_id'] ?? '',
 		'embed'       => 'iframe',
 		'width'       => '100%',
 		'height'      => 'auto',
 		'padding_top' => '10', // Adding min 10 padding since by-default it's adding 56.25% padding even with 0 padding.
 	];
+
+	$bc_video_args = wp_parse_args( $bc_video_values, $bc_video_args );
 
 	$allowed_html           = wp_kses_allowed_html( 'post' );
 	$allowed_html['iframe'] = [
@@ -196,7 +202,7 @@ function cmb2_render_callback_for_brightcove_video( $field, $escaped_value, $obj
 					'id'    => esc_attr( $field_id . '_bc_video_id' ),
 					'class' => 'bc_video_id',
 					'name'  => esc_attr( $field_id . '[bc_video_id]' ),
-					'value' => esc_attr( $escaped_value['bc_video_id'] ) ?? '',
+					'value' => esc_attr( $bc_video_values['video_id'] ) ?? '',
 				]
 			),
 			$allowed_html
@@ -208,7 +214,7 @@ function cmb2_render_callback_for_brightcove_video( $field, $escaped_value, $obj
 					'id'    => esc_attr( $field_id . '_bc_video_duration' ),
 					'class' => 'bc_video_duration',
 					'name'  => esc_attr( $field_id . '[bc_video_duration]' ),
-					'value' => esc_attr( $escaped_value['bc_video_duration'] ) ?? '',
+					'value' => esc_attr( $bc_video_values['video_duration'] ) ?? '',
 				]
 			),
 			$allowed_html
@@ -220,7 +226,7 @@ function cmb2_render_callback_for_brightcove_video( $field, $escaped_value, $obj
 					'id'    => esc_attr( $field_id . '_bc_player_id' ),
 					'class' => 'bc_player_id',
 					'name'  => esc_attr( $field_id . '[bc_player_id]' ),
-					'value' => esc_attr( $escaped_value['bc_player_id'] ) ?? '',
+					'value' => esc_attr( $bc_video_values['player_id'] ) ?? '',
 				]
 			),
 			$allowed_html
@@ -232,7 +238,7 @@ function cmb2_render_callback_for_brightcove_video( $field, $escaped_value, $obj
 					'id'    => esc_attr( $field_id . '_bc_account_id' ),
 					'class' => 'bc_account_id',
 					'name'  => esc_attr( $field_id . '[bc_account_id]' ),
-					'value' => esc_attr( $escaped_value['bc_account_id'] ) ?? '',
+					'value' => esc_attr( $bc_video_values['account_id'] ) ?? '',
 				]
 			),
 			$allowed_html
