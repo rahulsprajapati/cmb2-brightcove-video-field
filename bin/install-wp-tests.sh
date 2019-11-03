@@ -124,6 +124,18 @@ install_test_suite() {
 
 }
 
+install_dependency_plugins() {
+  if [ ! -d "$WP_CORE_DIR"/wp-content/plugins/cmb2 ]; then
+	  download https://downloads.wordpress.org/plugin/cmb2.zip /tmp/cmb2.zip
+		unzip /tmp/cmb2.zip -d "$WP_CORE_DIR"/wp-content/plugins/
+  fi
+
+  if [ ! -d "$WP_CORE_DIR"/wp-content/plugins/brightcove-video-connect ]; then
+	  download https://downloads.wordpress.org/plugin/brightcove-video-connect.zip /tmp/brightcove-video-connect.zip
+		unzip /tmp/brightcove-video-connect.zip -d "$WP_CORE_DIR"/wp-content/plugins/
+  fi
+}
+
 install_db() {
 
 	if [ ${SKIP_DB_CREATE} = "true" ]; then
@@ -152,4 +164,5 @@ install_db() {
 
 install_wp
 install_test_suite
+install_dependency_plugins
 install_db
