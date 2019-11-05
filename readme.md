@@ -1,6 +1,8 @@
 CMB2 Brightcove Video Field
 ======================
 
+[![Travis](https://api.travis-ci.org/rahulsprajapati/cmb2-brightcove-video-field.svg?branch=master)](https://travis-ci.org/rahulsprajapati/cmb2-brightcove-video-field/) [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/rahulsprajapati/cmb2-brightcove-video-field/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/rahulsprajapati/cmb2-brightcove-video-field/?branch=master) [![Scrutinizer Coverage](https://scrutinizer-ci.com/g/rahulsprajapati/cmb2-brightcove-video-field/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/rahulsprajapati/cmb2-brightcove-video-field/?branch=master)
+
 Custom field for CMB2 which allow to add brightcove video as featured video ( metabox ).
 Adds a new button `Select Brightcove Video` that opens brightcove modal to select video and on save post it stores following data as serialized.
 
