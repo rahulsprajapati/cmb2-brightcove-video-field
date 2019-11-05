@@ -23,7 +23,15 @@
 
 		wpbc.triggerModal();
 
-		wpbc.broadcast.on( 'insert:shortcode', function () {
+		if ( wpbc.modal.target ) {
+			// Clear modal target if set any from previous modal.
+			wpbc.modal.target = '';
+		}
+
+		// Clearing any previously attached insert handlers first.
+		wpbc.broadcast.off( 'insert:shortcode' );
+
+		wpbc.broadcast.once( 'insert:shortcode', function () {
 			// Check if the event is triggered from metabox or content media button.
 			if ( !isBrightcoveMetabox ) {
 				return;
